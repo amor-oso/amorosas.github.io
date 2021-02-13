@@ -8,6 +8,22 @@
 FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
 });
+
+<pre>
+    $(function(){
+      FB.init({ apiKey: '203642573046113', status: true });
+
+      FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+          console.log(response);
+        } else if (response.status === 'not_authorized') {
+          console.log('not connected to app');
+        } else {
+          console.log('not logged in to fb');
+        }
+      });
+    });
+  </pre>
 </script>
 </body>
 </html>
